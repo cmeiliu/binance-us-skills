@@ -45,7 +45,7 @@ Local development:
 Prefer the default install behavior without `--copy` so your installed skill stays linked to the repo checkout and updates when you pull new commits.
 
 ```bash
-npx skills add /path/to/binance-us-skills -g --agent openclaw --yes --full-depth
+npx skills add . -g --agent openclaw --yes --full-depth
 ```
 
 From GitHub or for snapshot installs:
@@ -74,7 +74,7 @@ npx skills update
 
 ### Codex
 
-Codex can use this repo directly. The Codex-facing workflow is documented in [AGENTS.md](/Users/meiliu/codex/binance%20us%20skills/AGENTS.md), and the shared engine is:
+Codex can use this repo directly. The Codex-facing workflow is documented in `AGENTS.md`, and the shared engine is:
 
 ```bash
 python3 scripts/binance_us_brief.py --mode daily_brief --format text
@@ -88,7 +88,7 @@ python3 scripts/binance_us_brief.py --mode asset_research --asset BTC --format t
 
 ### Claude Code
 
-Claude Code can use the project-local skill wrapper at [.claude/skills/binance-us-briefing-engine/SKILL.md](/Users/meiliu/codex/binance%20us%20skills/.claude/skills/binance-us-briefing-engine/SKILL.md).
+Claude Code can use the project-local skill wrapper at `.claude/skills/binance-us-briefing-engine/SKILL.md`.
 
 It invokes the same bundled Python engine, so behavior stays aligned across agents.
 
@@ -176,10 +176,10 @@ python3 scripts/binance_us_brief.py init-config
 
 Skill entrypoints in this repo:
 
-- [binance-us-asset-research/SKILL.md](/Users/meiliu/codex/binance%20us%20skills/binance-us-asset-research/SKILL.md)
-- [binance-us-fund-account/SKILL.md](/Users/meiliu/codex/binance%20us%20skills/binance-us-fund-account/SKILL.md)
-- [binance-us-spot-trade/SKILL.md](/Users/meiliu/codex/binance%20us%20skills/binance-us-spot-trade/SKILL.md)
-- [binance-us-account-status/SKILL.md](/Users/meiliu/codex/binance%20us%20skills/binance-us-account-status/SKILL.md)
+- `binance-us-asset-research/SKILL.md`
+- `binance-us-fund-account/SKILL.md`
+- `binance-us-spot-trade/SKILL.md`
+- `binance-us-account-status/SKILL.md`
 
 For repos with a root skill, nested skills may require `--full-depth` during discovery or installation.
 

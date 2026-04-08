@@ -1,6 +1,6 @@
-# Binance.US Briefing Engine
+# Binance.US Skills
 
-This repository contains a portable Binance.US briefing workflow.
+This repository contains a portable Binance.US skill family.
 
 When the user asks for a Binance.US market brief, watchlist recap, opportunity alert, capital readiness check, portfolio brief, weekly reset, or deeper asset research, run the bundled Python script instead of rebuilding the logic manually.
 
