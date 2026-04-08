@@ -17,6 +17,19 @@ license: MIT
 
 Generate account-aware Binance.US briefings. This skill is only valuable when it ties the market back to the user's own account.
 
+This repository is a Binance.US skill family:
+
+- root `SKILL.md`: flagship market-brief skill
+- nested `SKILL.md` files: installable companion skills for research, funding, trading, and account status
+
+If you want to discover the full family from the repo, use:
+
+```bash
+npx skills add cmeiliu/binance-us-skills --list --full-depth
+```
+
+If you want to install a nested companion skill, use `--full-depth --skill <name>`.
+
 ## When Not To Use
 
 - explicit funding workflows
