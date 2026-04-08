@@ -1,24 +1,33 @@
-# Binance.US Briefing Engine
+# Binance.US Skills
 
-`Binance.US Briefing Engine` is the headline skill in a Binance.US skill family for OpenClaw, Codex, and Claude Code. It generates personalized Binance.US briefs using:
+`binance-us-skills` is a Binance.US skill family for OpenClaw, Codex, and Claude Code.
 
-- account balances
-- recent trading history
-- watchlists
-- market data
-- recent asset-specific news
+It is built around one simple goal: help agents move users from market awareness to account action on Binance.US in a way that feels useful, explicit, and trustworthy.
 
-The goal is to produce a brief that explains what matters for a specific user, not just what happened in the market.
+The repo currently includes five skills:
+
+- `binance-us-briefing-engine`: personalized daily brief, watchlist recap, opportunity alert, portfolio brief, capital-readiness check, and weekly reset
+- `binance-us-asset-research`: deeper single-asset research for Binance.US-listed assets
+- `binance-us-fund-account`: step-by-step account funding and deposit workflow
+- `binance-us-spot-trade`: deliberate spot-trade review workflow
+- `binance-us-account-status`: balances, deposits, readiness, and blockers
+
+Together, these skills cover the full loop:
+
+- understand the market
+- understand your account
+- research a setup
+- get capital ready
+- review the next Binance.US action
 
 ## Features
 
-- `daily_brief`
-- `portfolio_brief`
-- `watchlist_brief`
-- `opportunity_alert`
-- `capital_readiness`
-- `weekly_reset`
-- `asset_research`
+- 5 installable Binance.US skills in one repo
+- daily market and portfolio briefing
+- deeper Binance.US-safe asset research
+- account funding and deposit workflow guidance
+- spot-trade review workflow guidance
+- account-status and readiness checks
 - price-anchored summaries with 24h and 7-day context
 - market context and catalyst-watch sections
 - portfolio-aware news ranking and de-duplicated asset headline search
@@ -36,25 +45,25 @@ Local development:
 Prefer the default install behavior without `--copy` so your installed skill stays linked to the repo checkout and updates when you pull new commits.
 
 ```bash
-npx skills add /path/to/binance-us-briefing-engine -g --agent openclaw --yes
+npx skills add /path/to/binance-us-skills -g --agent openclaw --yes --full-depth
 ```
 
 From GitHub or for snapshot installs:
 
 ```bash
-npx skills add <github-owner>/<github-repo> -g --agent openclaw --yes --copy
+npx skills add cmeiliu/binance-us-skills -g --agent openclaw --yes --copy --full-depth
 ```
 
 From GitHub, if you want full skill-family discovery:
 
 ```bash
-npx skills add <github-owner>/<github-repo> --list --full-depth
+npx skills add cmeiliu/binance-us-skills --list --full-depth
 ```
 
 From GitHub, if you want to install a specific nested skill:
 
 ```bash
-npx skills add <github-owner>/<github-repo> -g --agent openclaw --yes --full-depth --skill binance-us-asset-research
+npx skills add cmeiliu/binance-us-skills -g --agent openclaw --yes --full-depth --skill binance-us-asset-research
 ```
 
 To refresh a copied or GitHub-installed skill later:
@@ -157,7 +166,7 @@ Create a starter config with:
 python3 scripts/binance_us_brief.py init-config
 ```
 
-## Skill Family
+## Skills
 
 - `binance-us-briefing-engine`: daily brief, watchlist, opportunity, portfolio, weekly, and capital-readiness flows
 - `binance-us-asset-research`: deeper single-asset research for Binance.US-listed assets
@@ -165,7 +174,7 @@ python3 scripts/binance_us_brief.py init-config
 - `binance-us-spot-trade`: deliberate spot-trade review workflow
 - `binance-us-account-status`: balances, deposits, readiness, and blockers
 
-Companion skills are packaged in:
+Skill entrypoints in this repo:
 
 - [binance-us-asset-research/SKILL.md](/Users/meiliu/codex/binance%20us%20skills/binance-us-asset-research/SKILL.md)
 - [binance-us-fund-account/SKILL.md](/Users/meiliu/codex/binance%20us%20skills/binance-us-fund-account/SKILL.md)
